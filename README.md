@@ -231,7 +231,7 @@ and follow the command prompt instructions.
 
 ## 🩷 Contributing 🩷
 
-We welcome contributors!  To get started is to join our active [discord community](https://discord.com/channels/1075227138766147656/1147542772824408074).  Otherwise here are some ways to contribute and get paid:
+We welcome contributors!  To get started is to join our active [discord community](https://discord.anarchy.ai).  Otherwise here are some ways to contribute and get paid:
 
 ### Jobs
 
@@ -241,7 +241,7 @@ We welcome contributors!  To get started is to join our active [discord communit
 
 ### Bounty
 
-Some tickets we'll pay you for closing! Look at the ticket labels to see how much the bounty is.  To get started, [join the discord and read the guide](https://discord.com/channels/1075227138766147656/1147542772824408074)
+Some tickets we'll pay you for closing! Look at the ticket labels to see how much the bounty is.  To get started, [join the discord and read the guide](https://discord.anarchy.ai)
 
 ## 🙏 Acknowledgements 🙏
 
