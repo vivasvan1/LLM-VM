@@ -106,7 +106,7 @@ in memory and compute resources.
 
 Setting up a virtual environment is an important step in running this project. A virtual environment is a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages. This allows you to run the project in an isolated environment, separate from your system's Python installation, which can help prevent conflicts between dependencies.
 
-You can set up a virtual environment using Python's built-in `venv` module. Here are the steps:
+You can set up a virtual environment using Python's built-in `venv` module.
 
 ```bash
 > python3 -m venv myenv
