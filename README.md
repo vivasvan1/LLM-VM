@@ -102,6 +102,29 @@ Different models have different system requirements. Limiting factors on most sy
 
 That said, always lookup information about the models you're using, they all have different sizes and requirements 
 in memory and compute resources. 
+### 🌐 Virtual Environment Setup
+
+Setting up a virtual environment is an important step in running this project. A virtual environment is a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages. This allows you to run the project in an isolated environment, separate from your system's Python installation, which can help prevent conflicts between dependencies.
+
+You can set up a virtual environment using either Python's built-in `venv` module or Anaconda. Here are the steps for both methods:
+
+#### Using venv
+```bash
+> python3 -m venv myenv
+> source myenv/bin/activate
+```
+The first line creates a new virtual environment named "myenv". The second line activates the virtual environment, which means that when you run Python, it will use the Python installation in the virtual environment.
+
+#### Using conda
+```bash
+> conda create -n myenv python=3.10
+> conda activate myenv
+```
+The first line creates a new conda environment named "myenv" with Python 3.10. The second line activates the conda environment.
+
+Note: Replace "myenv" with the name you want to give to your virtual environment.
+
+Note: Ensure that you have either Python's venv module or Anaconda installed on your system before you can use these code snippets.
 
 ### 👨‍💻 Installation
 
