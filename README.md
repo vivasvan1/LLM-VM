@@ -91,7 +91,7 @@ Python >=3.10 Supported. Older versions of Python are on a best-effort basis.
 
 Use ```> python3 --version ``` to check what version you are on. 
 
-To upgrade your python, either create a new python env using ```> python3 -m venv myenv``` or go to https://www.python.org/downloads/ to download the latest version.
+To upgrade your python, create a new python env using ```> python3 -m venv myenv``` or go to https://www.python.org/downloads/ to download the latest version.
 
 For more information on choosing a virtual environment solution, check out this resource: https://dev.to/bowmanjd/python-tools-for-managing-virtual-environments-3bko
 
@@ -113,18 +113,11 @@ You can set up a virtual environment using either Python's built-in `venv` modul
 > python3 -m venv myenv
 > source myenv/bin/activate
 ```
-The first line creates a new virtual environment named "myenv". The second line activates the virtual environment, which means that when you run Python, it will use the Python installation in the virtual environment.
-
-#### Using conda
-```bash
-> conda create -n myenv python=3.10
-> conda activate myenv
-```
-The first line creates a new conda environment named "myenv" with Python 3.10. The second line activates the conda environment.
+This creates and activates a new virtual environment named "myenv".
 
 Note: Replace "myenv" with the name you want to give to your virtual environment.
 
-Note: Ensure that you have either Python's venv module or Anaconda installed on your system before you can use these code snippets.
+Note: Ensure that you have Python's venv module installed on your system before you can use these code snippets.
 
 ### 👨‍💻 Installation
 
@@ -231,7 +224,7 @@ and follow the command prompt instructions.
 
 ## 🩷 Contributing 🩷
 
-We welcome contributors!  To get started is to join our active [discord community](https://discord.anarchy.ai).  Otherwise here are some ways to contribute and get paid:
+We welcome contributors!  To get started is to join our active [discord community](https://discord.com/channels/1075227138766147656/1147542772824408074).  Otherwise here are some ways to contribute and get paid:
 
 ### Jobs
 
@@ -241,7 +234,7 @@ We welcome contributors!  To get started is to join our active [discord communit
 
 ### Bounty
 
-Some tickets we'll pay you for closing! Look at the ticket labels to see how much the bounty is.  To get started, [join the discord and read the guide](https://discord.anarchy.ai)
+Some tickets we'll pay you for closing! Look at the ticket labels to see how much the bounty is.  To get started, [join the discord and read the guide](https://discord.com/channels/1075227138766147656/1147542772824408074)
 
 ## 🙏 Acknowledgements 🙏
 
