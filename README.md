@@ -89,9 +89,11 @@ In line with Anarchy's mission, the LLM-VM strives to support open-source models
 
 Python >=3.10 Supported. Older versions of Python are on a best-effort basis. 
 
-Use ```bash > python3 --version ``` to check what version you are on. 
+Use ```> python3 --version ``` to check what version you are on. 
 
-To upgrade your python, either create a new python env using ```bash > conda create -n myenv python=3.10 ``` or go to https://www.python.org/downloads/ to download the latest version.
+To upgrade your python, either create a new python env using ```> python3 -m venv myenv``` or go to https://www.python.org/downloads/ to download the latest version.
+
+For more information on choosing a virtual environment solution, check out this resource: https://dev.to/bowmanjd/python-tools-for-managing-virtual-environments-3bko
 
 
 #### System Requirements
@@ -206,7 +208,7 @@ and follow the command prompt instructions.
 
 ## 🩷 Contributing 🩷
 
-We welcome contributors!  To get started is to join our active [discord community](https://discord.anarchy.ai).  Otherwise here are some ways to contribute and get paid:
+We welcome contributors!  To get started is to join our active [discord community](https://discord.com/channels/1075227138766147656/1147542772824408074).  Otherwise here are some ways to contribute and get paid:
 
 ### Jobs
 
