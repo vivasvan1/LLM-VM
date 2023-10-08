@@ -315,11 +315,18 @@ class SmallLocalLLama2(BaseOnsiteLLM):
         generate: Generates a response from a given prompt with the loaded LLM and tokenizer
     """
     model_uri="meta-llama/Llama-2-7b"
+    
+    def __init__(self, model_uri=None, tokenizer_kw_args={}, model_kw_args={}):
+        super().__init__(model_uri, tokenizer_kw_args, model_kw_args)
+        
+        if not os.environ.get("LLM_VM_HF_ACCESS_TOKEN"):
+            raise ValueError("Llama2 is a gated model. Make sure to accept the T&C at https://huggingface.co/meta-llama/Llama-2-7b.\nAnd Please set the environment variable LLM_VM_HF_ACCESS_TOKEN to your Hugging Face access token. \n (Access Token can be found https://huggingface.co/settings/tokens)")
+
 
     def model_loader(self):
-        return AutoModelForCausalLM.from_pretrained(self.model_uri)
+        return AutoModelForCausalLM.from_pretrained(self.model_uri,use_auth_token=os.environ["LLM_VM_HF_ACCESS_TOKEN"])
     def tokenizer_loader(self):
-        return AutoTokenizer.from_pretrained(self.model_uri)
+        return AutoTokenizer.from_pretrained(self.model_uri,use_auth_token=os.environ["LLM_VM_HF_ACCESS_TOKEN"])
 
 @RegisterModelClass("flan")# our yummiest model based on similarity to food
 class SmallLocalFlanT5(BaseOnsiteLLM):
