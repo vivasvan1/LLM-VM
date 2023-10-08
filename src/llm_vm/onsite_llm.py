@@ -29,7 +29,7 @@ __private_key_value_models_map =  {}
 #         "opt": SmallLocalOpt,
 #         "bloom": SmallLocalBloom,
 #         "neo": SmallLocalNeo,
-#         "llama2": SmallLocalLLama,
+#         "llama2": SmallLocalLLama2,
 #         "gpt": GPT3,
 #         "chat_gpt": ChatGPT,
 #         "flan" : SmallLocalFlanT5,
@@ -299,7 +299,7 @@ class SmallLocalNeo(BaseOnsiteLLM):
         return AutoTokenizer.from_pretrained(self.model_uri)
 
 @RegisterModelClass("llama2")
-class SmallLocalLLama(BaseOnsiteLLM):
+class SmallLocalLLama2(BaseOnsiteLLM):
 
     """
     This is a class for Meta's llama-7b LLM
@@ -317,9 +317,9 @@ class SmallLocalLLama(BaseOnsiteLLM):
     model_uri="meta-llama/Llama-2-7b"
 
     def model_loader(self):
-        return LlamaForCausalLM.from_pretrained(self.model_uri)
+        return AutoModelForCausalLM.from_pretrained(self.model_uri)
     def tokenizer_loader(self):
-        return LlamaTokenizer.from_pretrained(self.model_uri)
+        return AutoTokenizer.from_pretrained(self.model_uri)
 
 @RegisterModelClass("flan")# our yummiest model based on similarity to food
 class SmallLocalFlanT5(BaseOnsiteLLM):
