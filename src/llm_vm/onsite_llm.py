@@ -318,8 +318,11 @@ class SmallLocalLLama2(BaseOnsiteLLM):
     
     def __init__(self, model_uri=None, tokenizer_kw_args={}, model_kw_args={}):
         super().__init__(model_uri, tokenizer_kw_args, model_kw_args)
-        
-        hf_token = os.environ.get("LLM_VM_HF_ACCESS_TOKEN")
+        try:
+            hf_token = os.environ.get("LLM_VM_HF_ACCESS_TOKEN")
+        except:
+            hf_token = None
+            
         if hf_token is None:
             raise ValueError(
                 "Environment variable LLM_VM_HF_ACCESS_TOKEN is not set. Llama2 is a gated model. "
