@@ -318,19 +318,22 @@ class SmallLocalLLama2(BaseOnsiteLLM):
     
     def __init__(self, model_uri=None, tokenizer_kw_args={}, model_kw_args={}):
         super().__init__(model_uri, tokenizer_kw_args, model_kw_args)
-
+        
+    def _hf_access_token_check(self):
         hf_token = os.environ.get("LLM_VM_HF_ACCESS_TOKEN") if "LLM_VM_HF_ACCESS_TOKEN" in os.environ.keys() else None
         if hf_token is None:
             raise ValueError(
-                "Environment variable LLM_VM_HF_ACCESS_TOKEN is not set. Llama2 is a gated model. "
+                "Llama2 is a gated model. "
                 "Ensure you have accepted the T&C at https://huggingface.co/meta-llama/Llama-2-7b. "
-                "Then, set the LLM_VM_HF_ACCESS_TOKEN environment variable to your Hugging Face access token. "
-                "(You can find your Access Token at https://huggingface.co/settings/tokens)"
+                "Then, set the LLM_VM_HF_ACCESS_TOKEN environment variable to your Hugging Face Access Token."
+                "(You can find your Access Token at https://huggingface.co/settings/tokens) Environment variable LLM_VM_HF_ACCESS_TOKEN is not set. "
             )
 
     def model_loader(self):
+        self._hf_access_token_check()
         return AutoModelForCausalLM.from_pretrained(self.model_uri,use_auth_token=os.environ["LLM_VM_HF_ACCESS_TOKEN"])
     def tokenizer_loader(self):
+        self._hf_access_token_check()
         return AutoTokenizer.from_pretrained(self.model_uri,use_auth_token=os.environ["LLM_VM_HF_ACCESS_TOKEN"])
 
 @RegisterModelClass("flan")# our yummiest model based on similarity to food
