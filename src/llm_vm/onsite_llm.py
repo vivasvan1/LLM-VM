@@ -329,12 +329,15 @@ class SmallLocalLLama2(BaseOnsiteLLM):
 
     def model_loader(self):
         self._hf_access_token_check()
-        token = os.environ["LLM_VM_HF_ACCESS_TOKEN"]
-        return AutoModelForCausalLM.from_pretrained(self.model_uri, token=token)
+        access_token = os.environ["LLM_VM_HF_ACCESS_TOKEN"]
+        print(access_token)
+        model = AutoModelForCausalLM.from_pretrained(self.model_uri, device_map="auto", load_in_4bit=True, token=access_token)
+        return model
     def tokenizer_loader(self):
         self._hf_access_token_check()
-        token = os.environ["LLM_VM_HF_ACCESS_TOKEN"]
-        return AutoTokenizer.from_pretrained(self.model_uri, token=token)
+        access_token = os.environ["LLM_VM_HF_ACCESS_TOKEN"]
+        tokenizer = AutoTokenizer.from_pretrained(self.model_uri, use_fast=True, use_auth_token=access_token)
+        return tokenizer
 
 @RegisterModelClass("flan")# our yummiest model based on similarity to food
 class SmallLocalFlanT5(BaseOnsiteLLM):
