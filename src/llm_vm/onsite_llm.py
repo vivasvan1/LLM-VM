@@ -314,7 +314,7 @@ class SmallLocalLLama2(BaseOnsiteLLM):
         tokenizer_loader: Loads the tokenizer into memory
         generate: Generates a response from a given prompt with the loaded LLM and tokenizer
     """
-    model_uri="meta-llama/Llama-2-7b"
+    model_uri="meta-llama/Llama-2-7b-hf"
     
     def __init__(self, model_uri=None, tokenizer_kw_args={}, model_kw_args={}):
         super().__init__(model_uri, tokenizer_kw_args, model_kw_args)
@@ -323,10 +323,8 @@ class SmallLocalLLama2(BaseOnsiteLLM):
         hf_token = os.environ.get("LLM_VM_HF_ACCESS_TOKEN") if "LLM_VM_HF_ACCESS_TOKEN" in os.environ.keys() else None
         if hf_token is None:
             raise ValueError(
-                "Llama2 is a gated model. "
-                "Ensure you have accepted the T&C at https://huggingface.co/meta-llama/Llama-2-7b. "
-                "Then, set the LLM_VM_HF_ACCESS_TOKEN environment variable to your Hugging Face Access Token."
-                "(You can find your Access Token at https://huggingface.co/settings/tokens) Environment variable LLM_VM_HF_ACCESS_TOKEN is not set. "
+                "Environment variable LLM_VM_HF_ACCESS_TOKEN is not set."
+                "(Access Token can be found at https://huggingface.co/settings/tokens)"
             )
 
     def model_loader(self):
